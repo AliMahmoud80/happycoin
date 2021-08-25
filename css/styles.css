@@ -1,0 +1,711 @@
+:root {
+    --primary: rgba(184, 70, 149, 1);
+    --primary-light: rgba(184, 70, 149, .45);
+    --primary-light-hover: rgba(184, 70, 149, .25);
+    --default-font-color: #3a395e;
+    --default-padding: 24px;
+}
+body {
+    font-family: 'Plus Jakarta Display', sans-serif;
+    font-size: 18px;
+    line-height: 1.778em;
+    color: var(--default-font-color);
+}
+h1 {
+    font-size: 66px;
+    line-height: 1.18;
+    font-size: 66px;
+}
+h2 {
+    font-size: 48px;
+    line-height: 1.25em;
+}
+h3 {
+    font-size: 28px;
+    line-height: 1.333em;
+}
+h4 {
+    font-size: 24px;
+}
+a {
+    color: #7051ef;
+}
+strong {
+    font-weight: 700;
+    color: #3a395e !important;
+}
+.font-weight-bold {
+    color: #3a395e;
+}
+/* Utilities */
+.primary-text {
+    color: var(--primary);
+}
+.responsive-img {
+    width: 100%;
+    height: auto;
+}
+/* Components */
+.navigation-drawer {
+    width: 100%;
+    height: calc(100% - 48px);
+    background: white;
+    z-index: 1000;
+    right: 0;
+    bottom: 0;
+    transition: cubic-bezier(0.19, 1, 0.22, 1);
+    display: none;
+    box-shadow: 0 4px 10px 0 rgb(74 58 255 / 18%);
+}
+.navigation-drawer .navigation {
+    padding: 120px 20px;
+    font-size: 27px;
+}
+.navigation-drawer .navigation ul li a {
+    padding: 20px 10px;
+}
+.btn-default {
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    padding: 21.5px 2.7%;
+    border-radius: 20px;
+    text-align: center;
+    outline: none;
+    border: none;
+    transition: box-shadow 350ms ease, transform 350ms ease, -webkit-transform 350ms ease;
+    box-shadow: 0 3px 17px 0 rgb(112 81 239 / 27%);
+    font-weight: bold;
+}
+.btn-default:hover{
+    transform: scale(1.1);
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 7px 25px 0 rgb(112 81 239 / 27%);
+}
+.btn-white {
+    background: white;
+    color: black;
+}
+.btn-white:hover {
+    color: var(--primary);
+}
+/* Containers */
+.container-default {
+    max-width: 1305px;
+    padding: 0 var(--default-padding);
+    margin: 0 auto;
+}
+.btn-sm {
+    width: 50px;
+    height: 50px;
+}
+.menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    border-radius: 15px;
+    padding: 10px;
+}
+.menu-btn img {
+    width: 30px;
+    height: 30px;
+}
+.section {
+    padding-top: 120px;
+    margin-bottom: 120px;
+}
+.carousel-section button {
+    outline: none;
+    background: transparent;
+    border: 0;
+    opacity: 1 !important;
+}
+.carousel-section div {
+    gap: 20px;
+}
+.carousel-section a {
+    max-width: 146px;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* float: left; */
+}
+.carousel-section .invert-img {
+    filter: invert(1);
+}
+.carousel-section a img {
+    width: 100%;
+    height: auto;
+}
+.card {
+    padding: 48px 29px 49px;
+    border: none;
+    background: white;
+    border-radius: 45px;
+    box-shadow: 0 0 5px 0 rgb(39 25 77 / 2%), 0 3px 20px 0 rgb(112 81 239 / 4%), 0 10px 28px 0 rgb(39 25 77 / 3%);
+    gap: 18px;
+}
+.card p {
+    color: #6e6d8f;
+}
+.card img {
+    width: 105px;
+    height: 105px;
+}
+.timeline-card {
+    max-width: 460px;
+    padding: 40px 50px;
+}
+.timeline-card p {
+    font-size: 18px;
+}
+.timeline-card a {
+    text-decoration: underline;
+}
+.faq-card {
+    background: #fafafc;
+    border-radius: 26px;
+    padding: 38px 37px 38px 60px;
+    /* cursor: pointer; */
+}
+.faq-card, .faq-card * {
+    transition: 350ms ease-in-out;
+}
+.faq-card-header button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    color: var(--primary);
+}
+.faq-card-header button:hover {
+    transform: none;
+}
+.faq-card-content {
+    display: none;
+    font-size: 20px;
+    line-height: 1.8em;
+    padding-top: 30px;
+    color: #6e6d8f;
+}
+.faq-card.card-active {
+    background: var(--primary-light-hover);
+}
+.faq-card.card-active .faq-card-content {
+    display: block;
+}
+.faq-card.card-active .faq-card-header button i {
+    transform: rotate(90deg);
+}
+.timeline {
+    max-width: 40px;
+}
+.timeline-dot {
+    position: absolute;
+    z-index: 3;
+    width: 39px;
+    height: 39px;
+    min-height: 39px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #fff;
+    border-radius: 1000px;
+    background-color: var(--primary);
+    box-shadow: 0 2px 9px 0 rgb(112 81 239 / 35%);
+}
+.timeline-bar {
+    z-index: 2;
+    width: 6px;
+    height: 100%;
+    background-color: #f7f7fa;
+}
+.timeline-color-bar {
+    z-index: 3;
+    width: 6px;
+    height: 0;
+    background: var(--primary);
+    position: absolute;
+    top: 6px;
+    transition: height 200ms ease;
+}
+
+/* Layouts */
+
+/* Social Links Bar */
+.social-header {
+    background-color: var(--primary-light);
+    height: 48px;
+    padding: 17px 0;
+    gap: 25px;
+}
+.social-header i {
+    color: #060606;
+}
+/* End Social Buttons Bar */
+
+/* Header */
+.header {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    gap: 40px;
+    background: white;
+    z-index: 9999;
+}
+.header-top {
+    position: fixed;
+    top: 48px;
+    top: 0;
+}
+.header-brand {
+    height: 34px;
+    gap: 6px;
+    transition: transform 350ms ease;
+    z-index: 9999;
+}
+.header-brand:hover {
+    transform: scale(1.1);
+}
+.navigation ul {
+    gap: 10px;
+}
+.navigation ul li {
+    line-height: 1rem;
+    list-style-type: none;
+}
+.navigation ul li a {
+    color: var(--default-font-color);
+    display: block;
+    border-radius: 14px;
+    padding: 16px 10px;
+    transition: background-color 350ms ease, color 350ms ease;
+    text-decoration: none;
+}
+.navigation ul li a.active {
+    font-weight: 500;
+    background-color: var(--primary-light-hover); 
+}
+.navigation ul li a:hover {
+    background-color: var(--primary-light-hover); 
+}
+/* End Header */
+
+/* Main Section */
+.main-section {
+    margin-top: 160px;
+    margin-bottom: 175px;
+}
+.text-section {
+    max-width: 535px;
+    gap: 25px;
+}
+.top-stick {
+    background: var(--primary);
+    width: 108px;
+    height: 6px;
+}
+.text-section h1 {
+    padding-top: 10px;
+    font-weight: 700;
+}
+.text-section p {
+    font-size: 20px;
+    line-height: 1.8em;
+    color: #6e6d8f;
+    margin-bottom: 20px;
+}
+.section-btns {
+    gap: 26px;
+}
+.section-btns .btn-default {
+    padding: 28px 40px;
+    font-weight: bold;
+}
+/* End Main Section */
+
+/* Carousel Section */
+.carousel-section {
+    background: var(--primary-light);
+    height: 100px;
+}
+/* End Carousel Section */
+
+/* Description Section */
+.description-section {
+    background-color: #009400;
+    color: white;
+    padding-top: 90px;
+    padding-bottom: 85px;
+}
+.description-section .text-section {
+    max-width: 600px;
+}
+.description-section .section-btns {
+    gap: 10px;
+}
+/* End Description Section */
+
+/* Tokenomics Section */
+.tokenomics-section .text-section {
+    margin-bottom: 40px;
+    max-width: none;
+    row-gap: 0;
+}
+.tokenomics-section .text-section h2 {
+    margin-bottom: 15px;
+}
+.tokenomics-section .text-section p {
+    max-width: 550px;
+}
+.tokenomics-cards {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 16px;
+    column-gap: 27px;
+    margin-bottom: 56px;
+}
+/* End Tokenomics Section */
+
+/* Roadmap Section */
+.roadmap-section .text-section {
+    gap: 20px;
+}
+.timeline-container {
+    gap: 20px;
+}
+.timeline-cards-container {
+    gap: 40px;
+}
+/* End Roadmap Section */
+
+/* Donate Section */
+.donate-section {
+    position: relative;
+}
+.donate-section .text-section {
+    padding: 99px 93px 99px 57px;
+    background: white;
+    max-width: 61%;
+    border-radius: 45px;
+    z-index: 2;
+}
+.donate-section .text-section a {
+    color: #3a395e;
+    font-size: 20px;
+    text-decoration: underline #7051ef 2px;
+}
+.donate-section .text-section a:hover {
+    text-decoration: underline red 2px;
+}
+.donate-section img {
+    position: absolute;
+    right: 0;
+    border-radius: 60px;
+    max-width: 68%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 705px;
+}
+/* End Donate Section */
+
+/* faq Section */
+.faq-section {
+    gap: 20px;
+}
+.faq-cards {
+    gap: 40px;
+    width: 80%;
+}
+.faq-section .faq-cards {
+    margin-top: 20px;
+}
+.faq-section .text-section {
+    max-width: none;
+}
+/* End faq Section */
+
+/* Lastwords Section */
+.lastwords-section {
+    position: relative;
+    margin-bottom: 0;
+}
+.lastwords-section .text-section {
+    z-index: 100;
+    /* margin: 0; */
+    padding: 160px var(--default-padding);
+}
+.lastwords-section img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+}
+/* End Lastwords Section */
+
+/* Footer */
+footer .footer-logo {
+    transition: transform 300ms ease;
+}
+footer .footer-logo:hover {
+    transform: scale(0.9);
+}
+footer .text-section {
+    max-width: none;
+    margin-top: 50px !important;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e5ea;
+}
+footer .text-section p {
+    font-size: 18px;
+    max-width: 463px;
+}
+footer .text-section img {
+    width: 250px;
+    height: auto;
+}
+footer .footer-main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    padding-top: 50px;
+}
+.footer-main-content .social-links {
+    max-width: 400px;
+    display: grid;
+    grid-template-columns: 50px 50px;
+    grid-template-rows: auto;
+    row-gap: 16px;
+    column-gap: 18px;
+    margin-bottom: 40px;
+}
+.footer-main-content .social-links a {
+    width: 42px;
+    height: 42px;
+    text-decoration: none;
+}
+.footer-main-content .social-links a img {
+    transition: transform 300ms ease;
+}
+.footer-main-content .social-links img:hover {
+    transform: scale(1.1);
+}
+.footer-links {
+    gap: 20px;
+}
+.footer-links a {
+    color: var(--default-font-color);
+    transition: color 300ms ease;   
+    text-decoration: none;
+}
+.footer-links a:hover {
+    color: var(--primary-light);
+}
+footer .copyright {
+    margin-top: 100px !important;
+    margin-bottom: 47px;
+}
+footer .twitter-icon {
+    margin-top: 5.5px;
+    margin-left: 10px;
+}
+/* End Footer */
+
+/* Extra Large Screens */
+@media screen and (min-width: 1200px) {
+    .donate-section img {
+        height: 107%;
+    }
+    .text-section .section-btns button {
+        padding: 22px 55px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .footer-main-content .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        height: 110px;
+    }
+}
+
+/* Large Screens */
+@media screen and (max-width: 992px) {
+    h1 {
+        font-size: 53px;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    h3 {
+        font-size: 24px;
+    }
+    .timeline-card {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .main-section {
+        margin-top: 80px;
+        margin-bottom: 90px;
+    }
+    .text-section {
+        margin-top: 30px;
+    }
+    .text-section h1 {
+        padding-top: 0;
+    }
+    .main-section p {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .main-logo img {
+        width: 80%;
+    }
+    .carousel-section a {
+        width: 33.3%;
+    }
+    .description-section {
+        padding-bottom: 76px;
+    }
+    .section {
+        padding-top: 80px;
+        margin-bottom: 80px;
+    }
+    .tokenomics-section .text-section {
+        column-gap: 50px;
+    }
+    .tokenomics-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+    .donate-section .text-section {
+        max-width: none;
+    }
+    .donate-section img {
+        position: relative;
+        height: auto;
+        max-width: none;
+        width: 95%;
+        min-height: auto;
+    }
+    .roadmap-section .text-section {
+        max-width: 476px;
+        width: 44%;
+    }
+    .faq-cards {
+        width: 100%;
+    }
+    footer .footer-main-content {
+        grid-template-columns: auto;
+        grid-template-rows: .2fr 1fr;
+    }
+}
+
+/* Medium Screens */
+@media screen and (max-width: 768px){
+    h1 {
+        font-size: 42px;
+    }
+    h2 {
+        font-size: 33px;
+    }
+    h3 {
+        font-size: 24px;
+    }
+    h4 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 20px;
+        line-height: 32px;
+    }
+    .navigation-drawer .navigation {
+        font-size: 24px;
+    }
+    .btn-default {
+        padding: 28px 30px !important;
+    }
+    .btn-default-sm {
+        width: 46px !important;
+        height: 46px !important;
+        padding: 0 !important;
+        min-width: 46px;
+        border-radius: 15px;
+    }
+    .faq-card {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+    .faq-card-content {
+        font-size: 16px;
+    }
+    .main-logo {
+        width: 60%;
+    }
+    .text-section {
+        gap: 5px;
+    }
+    .text-section h1 {
+        margin-bottom: 20px;
+    }
+    .text-section h1, .text-section p, .section-btns {
+        width: 100%;
+    }
+    .section-btns {
+        gap: 15px;
+    }
+    .section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .tokenomics-cards {
+        grid-template-columns: 1fr;
+    }
+    .roadmap-section .text-section {
+        width: 100%;
+    }
+    .donate-section .text-section {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .lastwords-section .text-section {
+        padding: 120px var(--default-padding);
+    }
+}
+
+/* Small Screens */
+@media screen and (max-width: 576px) {
+    h1 {
+        font-size: 38px;
+    }
+    h2 {
+        font-size: 28px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 18px;
+    }
+    .faq-card {
+        padding: 30px 20px;
+    }
+    .text-section p, .section-btns .btn-default {
+        font-size: 18px;
+    }
+    .description-section .text-section {
+        gap: 10px;
+    }
+    .description-section .section-btns .btn-default {
+        width: 100%;
+    }
+}
